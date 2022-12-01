@@ -14,3 +14,9 @@ app.get('/greeting/:name', (req, res) => {
 app.listen(port, (req, res) => {
   console.log(`listening on port ${port}....`);
 });
+
+//TIP CALCULATOR
+app.get(`/tips/:total/:tipPercentage`, (req, res) => {
+  let tip = req.params.total * (req.params.tipPercentage / 100);
+  res.send(`You pay a tip of ${tip}`);
+});
